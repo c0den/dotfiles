@@ -1,0 +1,27 @@
+[
+    {
+        "clean": ["~"]
+    },
+    {
+        "shell": [
+            [""]
+        ]
+    },
+    {
+        "link": {
+            "~/.dotfiles": "",
+            "~/.vimrc": "vimrc",
+            "~/.vim": "vim/",
+            "~/.zshrc": "zshrc",
+            "~/.zsh": "zsh/",
+            "~/.antigen": "antigen/",
+            "~/.gitconfig": "gitconfig",
+            "~/.XResources": "XResources"
+        }
+    },
+    {
+        "shell": [
+            ["git update-submodules", "Installing/updating submodules"]
+        ]
+    }
+]
