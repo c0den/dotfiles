@@ -1,27 +1,19 @@
-[
-    {
-        "clean": ["~"]
-    },
-    {
-        "shell": [
-            [""]
-        ]
-    },
-    {
-        "link": {
-            "~/.dotfiles": "",
-            "~/.vimrc": "vimrc",
-            "~/.vim": "vim/",
-            "~/.zshrc": "zshrc",
-            "~/.zsh": "zsh/",
-            "~/.antigen": "antigen/",
-            "~/.gitconfig": "gitconfig",
-            "~/.XResources": "XResources"
-        }
-    },
-    {
-        "shell": [
-            ["git update-submodules", "Installing/updating submodules"]
-        ]
-    }
-]
+- defaults:
+    link:
+        relink: true
+
+- clean: ['~']
+        
+- link:
+    ~/.dotfiles: ''
+    ~/.vimrc: vimrc
+    ~/.vim: vim
+    ~/.zshrc: zshrc
+    ~/.zsh: zsh
+    ~/.antigen: antigen
+    ~/.gitconfig: gitconfig
+    ~/.Xresources: Xresources
+
+- shell:
+    - [git submodule update --init --recursive, Installing/updating submodules]
+    - [mkdir -p ~/Development, Creating Development directory]
