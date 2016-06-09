@@ -27,8 +27,8 @@ set nocompatible
 set backspace=indent,eol,start
 
 " set vim backupdir
-set backupdir=~/vimtmp,.
-set directory=~/vimtmp,.
+set backupdir=~/.vimtmp,.
+set directory=~/.vimtmp,.
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
