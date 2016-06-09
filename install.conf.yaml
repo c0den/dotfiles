@@ -17,3 +17,4 @@
 - shell:
     - [git submodule update --init --recursive, Installing/updating submodules]
     - [mkdir -p ~/Development, Creating Development directory]
+    - [mkdir -p ~/.vimtmp, Creating vim tmp directory]
