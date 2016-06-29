@@ -19,6 +19,9 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 
+" Disable autocomment
+autocmd BufNewFile,BufRead * setlocal formatoptions-=r
+
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -47,10 +50,34 @@ set incsearch		" do incremental searching
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
+" split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" show docstrings
+
+let g:SimpylFold_docstring_preview=1
+
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
+au BufNewFile,BufRead *.py set tabstop=4 
+au BufNewFile,BufRead *.py set softtabstop=4
+au BufNewFile,BufRead *.py set shiftwidth=4 
+au BufNewFile,BufRead *.py set textwidth=79
+au BufNewFile,BufRead *.py set expandtab
+au BufNewFile,BufRead *.py set autoindent 
+au BufNewFile,BufRead *.py set fileformat=unix
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
@@ -146,5 +173,8 @@ Plug 'kien/ctrlp.vim'
 
 " airline - status/tabline for vim
 Plug 'bling/vim-airline'
+
+" SimplyFold - fold plugin
+Plug 'tmhedberg/SimpylFold'
 
 call plug#end()
