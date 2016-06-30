@@ -130,6 +130,7 @@ set hlsearch	                            " highlight search results
 "=====================================================
 "" AirLine settings
 "=====================================================
+"let g:airline_theme='wombat'
 "let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail'
