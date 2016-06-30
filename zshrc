@@ -1,5 +1,5 @@
 export TERM="xterm-256color"
-source /home/will/.config/antigen/antigen.zsh
+source ~/.config/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh

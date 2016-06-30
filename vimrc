@@ -1,180 +1,252 @@
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2016 Apr 05
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
 
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
+"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+"                                                                              "
+"                       __   _ _ _ __ ___  _ __ ___                            "
+"                       \ \ / / | '_ ` _ \| '__/ __|                           "
+"                        \ V /| | | | | | | | | (__                            "
+"                         \_/ |_|_| |_| |_|_|  \___|                           "
+"                                                                              "
+"                                                                              "
+"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-" Set tabs to 4 spaces
-set expandtab
-set shiftwidth=4
-set softtabstop=4
+let $vimhome=fnamemodify(resolve(expand("~/.vimrc")), ':p:h')
 
-" Disable autocomment
-autocmd BufNewFile,BufRead * setlocal formatoptions-=r
-
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
+" Be iMproved
 set nocompatible
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-
-" set vim backupdir
-set backupdir=~/.vimtmp,.
-set directory=~/.vimtmp,.
-
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file (restore to previous version)
-  set undofile		" keep an undo file (undo changes after closing)
-endif
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
-
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-" Enable folding with the spacebar
-nnoremap <space> za
-
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
-
-" show docstrings
-
-let g:SimpylFold_docstring_preview=1
-
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
-
-au BufNewFile,BufRead *.py set tabstop=4 
-au BufNewFile,BufRead *.py set softtabstop=4
-au BufNewFile,BufRead *.py set shiftwidth=4 
-au BufNewFile,BufRead *.py set textwidth=79
-au BufNewFile,BufRead *.py set expandtab
-au BufNewFile,BufRead *.py set autoindent 
-au BufNewFile,BufRead *.py set fileformat=unix
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
-
-" Switch syntax highlighting on when the terminal has colors or when using the
-" GUI (which always has colors).
-if &t_Co > 2 || has("gui_running")
-  syntax on
-
-  " Also switch on highlighting the last used search pattern.
-  set hlsearch
-
-  " I like highlighting strings inside C comments.
-  let c_comment_strings=1
-endif
-
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") >= 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-
-  augroup END
-
-else
-
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
-
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
-endif
-
-if has('langmap') && exists('+langnoremap')
-  " Prevent that the langmap option applies to characters that result from a
-  " mapping.  If unset (default), this may break plugins (but it's backward
-  " compatible).
-  set langnoremap
-endif
-
-
-" Add optional packages.
-"
-" The matchit plugin makes the % command work better, but it is not backwards
-" compatible.
-packadd matchit
-
-" Enable airline
-set laststatus=2
-
+"=====================================================
+"" Vundle settings
+"=====================================================
+filetype off
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/jeffkreeftmeijer/vim-numbertoggle.git'
+    "-------------------=== Code/Project navigation ===-------------
+    Plug 'scrooloose/nerdtree'                " Project and file navigation
+    Plug 'majutsushi/tagbar'                  " Class/module browser
+    Plug 'kien/ctrlp.vim'                     " Fast transitions on project files
 
-" NerdTree On-Demand
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+    "-------------------=== Other ===-------------------------------
+    Plug 'bling/vim-airline'                  " Lean & mean status/tabline for vim
+    Plug 'vim-airline/vim-airline-themes'     " Themes for airline
+    Plug 'Lokaltog/powerline', {'branch':'develop'}                 " Powerline fonts Plug
+    Plug 'fisadev/FixedTaskList.vim'          " Pending tasks list
+    Plug 'rosenfeld/conque-term'              " Consoles as buffers
+    Plug 'tpope/vim-surround'                 " Parentheses, brackets, quotes, XML tags, and more
+    Plug 'flazz/vim-colorschemes'             " Colorschemes
 
-" vim-fugitive - git wrapper
-Plug 'tpope/vim-fugitive'
+    "-------------------=== Snippets support ===--------------------
+    Plug 'garbas/vim-snipmate'                " Snippets manager
+    Plug 'MarcWeber/vim-addon-mw-utils'       " dependencies #1
+    Plug 'tomtom/tlib_vim'                    " dependencies #2
+    Plug 'honza/vim-snippets'                 " snippets repo
 
-" Syntastic - Syntax checking hack for vim
-Plug 'scrooloose/syntastic'
+    "-------------------=== Languages support ===-------------------
+    Plug 'tpope/vim-commentary'               " Comment stuff out
+    Plug 'mitsuhiko/vim-sparkup'              " Sparkup(XML/jinja/htlm-django/etc.) support
+    Plug 'Rykka/riv.vim'                      " ReStructuredText Plug
 
-" Surround - quoting/parenthesizing made simple
-Plug 'tpope/vim-surround'
+    "-------------------=== Python  ===-----------------------------
+    Plug 'klen/python-mode'                   " Python mode (docs, refactor, lints...)
+    Plug 'davidhalter/jedi-vim'               " Jedi-vim autocomplete Plug
+    Plug 'scrooloose/syntastic'               " Syntax checking plugin for Vim
 
-" CTRLP - Full path fuzzy file, buffer, mru, tag finder
-Plug 'kien/ctrlp.vim'
+call plug#end()                                 " required
+filetype on
+filetype plugin on
+filetype plugin indent on
 
-" airline - status/tabline for vim
-Plug 'bling/vim-airline'
+"=====================================================
+"" General settings
+"=====================================================
+syntax enable                               " syntax highlight
 
-" SimplyFold - fold plugin
-Plug 'tmhedberg/SimpylFold'
+set t_Co=256                                " set 256 colors
+"colorscheme wombat256mod                    " set color scheme
 
-call plug#end()
+set number                                  " show line numbers
+set ruler
+set ttyfast                                 " terminal acceleration
+
+set tabstop=4                               " 4 whitespaces for tabs visual presentation
+set shiftwidth=4                            " shift lines by 4 spaces
+set smarttab                                " set tabs for a shifttabs logic
+set expandtab                               " expand tabs into spaces
+set autoindent                              " indent when moving to the next line while writing code
+
+set cursorline                              " shows line under the cursor's line
+set showmatch                               " shows matching part of bracket pairs (), [], {}
+
+set enc=utf-8	                            " utf-8 by default
+
+"set nobackup 	                            " no backup files
+"set nowritebackup                           " only in case you don't want a backup file while editing
+"set noswapfile 	                            " no swap files
+
+set backspace=indent,eol,start              " backspace removes all (indents, EOLs, start) What is start?
+
+set scrolloff=10                            " let 10 lines before/after cursor during scroll
+
+set clipboard=unnamed                       " use system clipboard
+
+autocmd BufNewFile,BufRead * setlocal formatoptions-=r " disable autocomment
+
+"=====================================================
+"" Navigation/Map settings
+"=====================================================
+nnoremap <C-J> <C-W><C-J>                   " split navigation Ctrl-J - down
+nnoremap <C-K> <C-W><C-K>                   " split navigation Ctrl-K - up
+nnoremap <C-L> <C-W><C-L>                   " split navigation Ctrl-L - left
+nnoremap <C-H> <C-W><C-H>                   " split navigation Ctrl-H - right
+
+nnoremap <space> za                         " enable folding with the spacebar
+
+"=====================================================
+"" Backup/Tmp settings
+"=====================================================
+set backupdir=~/.vimtmp,.
+set directory=~/.vimtmp,.
+if has("vms")
+  set nobackup      " do not keep a backup file, use versions instead
+else
+  set backup        " keep a backup file (restore to previous version)
+  set undofile      " keep an undo file (undo changes after closing)
+endif
+
+"=====================================================
+"" Tabs / Buffers settings
+"=====================================================
+tab sball
+set switchbuf=useopen
+set laststatus=2
+nmap <F9> :bprev<CR>
+nmap <F10> :bnext<CR>
+nmap <silent> <leader>q :SyntasticCheck # <CR> :bp <BAR> bd #<CR>
+
+"" Search settings
+"=====================================================
+set incsearch	                            " incremental search
+set hlsearch	                            " highlight search results
+
+"=====================================================
+"" AirLine settings
+"=====================================================
+"let g:airline_theme='badwolf'
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#formatter='unique_tail'
+let g:airline_powerline_fonts=1
+
+"=====================================================
+"" TagBar settings
+"=====================================================
+let g:tagbar_autofocus=0
+let g:tagbar_width=42
+autocmd BufEnter *.py :call tagbar#autoopen(0)
+autocmd BufWinLeave *.py :TagbarClose
+
+"=====================================================
+"" NERDTree settings
+"=====================================================
+let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']     " Ignore files in NERDTree
+let NERDTreeWinSize=40
+autocmd VimEnter * if !argc() | NERDTree | endif  " Load NERDTree only if vim is run without arguments
+nmap " :NERDTreeToggle<CR>
+
+"=====================================================
+"" SnipMate settings
+"=====================================================
+let g:snippets_dir='~/.vim/vim-snippets/snippets'
+
+"=====================================================
+"" Riv.vim settings
+"=====================================================
+let g:riv_disable_folding=1
+
+"=====================================================
+"" Python settings
+"=====================================================
+
+" omnicomplete
+set completeopt-=preview                    " remove omnicompletion dropdown
+
+" python executables for different plugins
+let g:pymode_python='python'
+let g:syntastic_python_python_exec='python'
+let g:jedi#force_py_version=2
+
+" rope
+let g:pymode_rope=0
+let g:pymode_rope_completion=0
+let g:pymode_rope_complete_on_dot=0
+let g:pymode_rope_auto_project=0
+let g:pymode_rope_enable_autoimport=0
+let g:pymode_rope_autoimport_generate=0
+let g:pymode_rope_guess_project=0
+
+" documentation
+let g:pymode_doc=0
+let g:pymode_doc_key='K'
+
+" lints
+let g:pymode_lint=0
+
+" virtualenv
+let g:pymode_virtualenv=1
+
+" breakpoints
+let g:pymode_breakpoint=1
+let g:pymode_breakpoint_key='<leader>b'
+
+" syntax highlight
+let g:pymode_syntax=1
+let g:pymode_syntax_slow_sync=1
+let g:pymode_syntax_all=1
+let g:pymode_syntax_print_as_function=g:pymode_syntax_all
+let g:pymode_syntax_highlight_async_await=g:pymode_syntax_all
+let g:pymode_syntax_highlight_equal_operator=g:pymode_syntax_all
+let g:pymode_syntax_highlight_stars_operator=g:pymode_syntax_all
+let g:pymode_syntax_highlight_self=g:pymode_syntax_all
+let g:pymode_syntax_indent_errors=g:pymode_syntax_all
+let g:pymode_syntax_string_formatting=g:pymode_syntax_all
+let g:pymode_syntax_space_errors=g:pymode_syntax_all
+let g:pymode_syntax_string_format=g:pymode_syntax_all
+let g:pymode_syntax_string_templates=g:pymode_syntax_all
+let g:pymode_syntax_doctests=g:pymode_syntax_all
+let g:pymode_syntax_builtin_objs=g:pymode_syntax_all
+let g:pymode_syntax_builtin_types=g:pymode_syntax_all
+let g:pymode_syntax_highlight_exceptions=g:pymode_syntax_all
+let g:pymode_syntax_docstrings=g:pymode_syntax_all
+
+" highlight 'long' lines (>= 80 symbols) in python files
+augroup vimrc_autocmds
+    autocmd!
+    autocmd FileType python,rst highlight Excess ctermbg=DarkGrey guibg=Black
+    autocmd FileType python,rst match Excess /\%81v.*/
+    autocmd FileType python,rst set nowrap
+augroup END
+
+" code folding
+let g:pymode_folding=0
+
+" pep8 indents
+let g:pymode_indent=1
+
+" code running
+let g:pymode_run=0
+
+" jedi-vim
+let g:jedi#popup_select_first=0             " Disable choose first option on autocomplete
+let g:jedi#show_call_signatures=0           " Show call signatures
+let g:jedi#popup_on_dot=1                   " Enable autocomplete on dot
+
+" syntastic
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_enable_signs=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_aggregate_errors=1
+let g:syntastic_loc_list_height=5
+let g:syntastic_error_symbol='X'
+let g:syntastic_style_error_symbol='X'
+let g:syntastic_warning_symbol='x'
+let g:syntastic_style_warning_symbol='x'
+let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
