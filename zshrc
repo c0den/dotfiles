@@ -36,6 +36,9 @@ antigen theme bhilburn/powerlevel9k powerlevel9k
 # Tell antigen that you're done.
 antigen apply
 
+# Rehash after installing app
+zstyle ':completion:*' rehash true
+
 # Setup zsh-autosuggestions
 #source /home/will/.zsh-autosuggestions/autosuggestions.zsh
 
