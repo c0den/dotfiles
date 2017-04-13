@@ -1,4 +1,5 @@
 export TERM="xterm-256color"
+export SSLKEYLOGFILE=/home/will/.sslkeylogs/sslkeylog.log
 source ~/.config/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.

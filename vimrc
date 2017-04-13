@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdtree'                " Project and file navigation
     Plug 'majutsushi/tagbar'                  " Class/module browser
     Plug 'kien/ctrlp.vim'                     " Fast transitions on project files
+    Plug 'tmhedberg/SimpylFold'               " Enabled simple python folding
 
     "-------------------=== Other ===-------------------------------
     Plug 'bling/vim-airline'                  " Lean & mean status/tabline for vim
@@ -33,6 +34,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'rosenfeld/conque-term'              " Consoles as buffers
     Plug 'tpope/vim-surround'                 " Parentheses, brackets, quotes, XML tags, and more
     Plug 'flazz/vim-colorschemes'             " Colorschemes
+    Plug 'Konfekt/FastFold'                   " Fast Folding
 
     "-------------------=== Snippets support ===--------------------
     Plug 'garbas/vim-snipmate'                " Snippets manager
@@ -63,6 +65,7 @@ syntax enable                               " syntax highlight
 set t_Co=256                                " set 256 colors
 "colorscheme wombat256mod                    " set color scheme
 
+set relativenumber
 set number                                  " show line numbers
 set ruler
 set ttyfast                                 " terminal acceleration
@@ -142,7 +145,7 @@ let g:airline_powerline_fonts=1
 let g:tagbar_autofocus=0
 let g:tagbar_width=42
 autocmd BufEnter *.py :call tagbar#autoopen(0)
-autocmd BufWinLeave *.py :TagbarClose
+"autocmd BufWinLeave *.py :TagbarToggle
 
 "=====================================================
 "" NERDTree settings

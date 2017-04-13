@@ -1,0 +1,71 @@
+#-- START ZCACHE GENERATED FILE
+#-- GENERATED: Wed Apr 12 11:44:46 CDT 2017
+#-- ANTIGEN v1.4.1
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/bzr.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/clipboard.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/compfix.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/completion.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/correction.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/diagnostics.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/directories.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/functions.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/git.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/grep.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/history.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/key-bindings.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/misc.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/nvm.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/prompt_info_functions.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/spectrum.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/termsupport.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib/theme-and-appearance.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/git/git.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/pip/pip.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/lein/lein.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/command-not-found/command-not-found.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/autojump/autojump.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/common-aliases/common-aliases.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/compleat/compleat.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/git-extras/git-extras.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/git-flow/git-flow.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/npm/npm.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/web-search/web-search.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/z/z.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-syntax-highlighting.git//zsh-syntax-highlighting.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-history-substring-search.git/./zsh-history-substring-search.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions.git//zsh-autosuggestions.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-djui-SLASH-alias-tips.git//alias-tips.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-unixorn-SLASH-autoupdate-antigen.zshplugin.git//autoupdate-antigen.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-Tarrasch-SLASH-zsh-autoenv.git//autoenv.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-syntax-highlighting.git//zsh-syntax-highlighting.plugin.zsh";
+source "/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-bhilburn-SLASH-powerlevel9k.git/powerlevel9k.zsh-theme";
+fpath+=(/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/lib /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/git /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/heroku /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/pip /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/lein /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/command-not-found /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/autojump /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/common-aliases /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/compleat /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/git-extras /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/git-flow /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/npm /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/web-search /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/plugins/z /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-syntax-highlighting.git// /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-autosuggestions.git// /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-djui-SLASH-alias-tips.git// /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-stanislas-SLASH-allergen.git// /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-unixorn-SLASH-autoupdate-antigen.zshplugin.git// /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-Tarrasch-SLASH-zsh-autoenv.git// /home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-joepvd-SLASH-zsh-hints.git//);
+unset __ZCACHE_FILE_PATH;
+export _ANTIGEN_BUNDLE_RECORD="
+https://github.com/robbyrussell/oh-my-zsh.git lib plugin true 
+https://github.com/robbyrussell/oh-my-zsh.git plugins/git plugin true 
+https://github.com/robbyrussell/oh-my-zsh.git plugins/heroku plugin true 
+https://github.com/robbyrussell/oh-my-zsh.git plugins/pip plugin true 
+https://github.com/robbyrussell/oh-my-zsh.git plugins/lein plugin true 
+https://github.com/robbyrussell/oh-my-zsh.git plugins/command-not-found plugin true 
+https://github.com/robbyrussell/oh-my-zsh.git plugins/autojump plugin true 
+https://github.com/robbyrussell/oh-my-zsh.git plugins/common-aliases plugin true 
+https://github.com/robbyrussell/oh-my-zsh.git plugins/compleat plugin true 
+https://github.com/robbyrussell/oh-my-zsh.git plugins/git-extras plugin true 
+https://github.com/robbyrussell/oh-my-zsh.git plugins/git-flow plugin true 
+https://github.com/robbyrussell/oh-my-zsh.git plugins/npm plugin true 
+https://github.com/robbyrussell/oh-my-zsh.git plugins/web-search plugin true 
+https://github.com/robbyrussell/oh-my-zsh.git plugins/z plugin true 
+https://github.com/zsh-users/zsh-syntax-highlighting.git / plugin true 
+https://github.com/zsh-users/zsh-history-substring-search.git ./zsh-history-substring-search.zsh plugin true 
+https://github.com/zsh-users/zsh-autosuggestions.git / plugin true 
+https://github.com/djui/alias-tips.git / plugin true 
+https://github.com/stanislas/allergen.git / plugin true 
+https://github.com/unixorn/autoupdate-antigen.zshplugin.git / plugin true 
+https://github.com/Tarrasch/zsh-autoenv.git / plugin true 
+https://github.com/joepvd/zsh-hints.git / plugin true 
+https://github.com/zsh-users/zsh-syntax-highlighting.git / plugin true 
+https://github.com/bhilburn/powerlevel9k.git powerlevel9k.zsh-theme theme true " _ZCACHE_CACHE_LOADED=true _ZCACHE_CACHE_VERSION=v1.4.1
+export ZSH="/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git" ZSH_CACHE_DIR="/home/will/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh.git/cache/"
+#-- END ZCACHE GENERATED FILE
+
