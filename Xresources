@@ -6,23 +6,24 @@ Xcursor.size: 16
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: #252936, #002b36, #7780a1
-rofi.color-normal: #252936, #7780a1, #252936, #252936, #e6e1ed
-rofi.color-active: #252936, #268bd2, #252936, #268bd2, #fdf6e3
-rofi.color-urgent: #252936, #dc322f, #252936, #dc322f, #fdf6e3
+rofi.color-window: argb:CC252936, #002b36, #7780a1
+rofi.color-normal: argb:CC252936, #7780a1, argb:CC252936, argb:CC252936, #e6e1ed
+rofi.color-active: argb:CC252936, #268bd2, argb:CC252936, argb:FF268bd2, #fdf6e3
+rofi.color-urgent: argb:CC252936, #dc322f, argb:CC252936, #CCdc322f, #fdf6e3
 rofi.separator-style: dash
 rofi.font: System San Francisco Display 18
-rofi.lines: 3
-rofi.opacity: 85
+!rofi.lines: 3
+rofi.fixed-num-lines: false
 rofi.width: 100
 rofi.eh: 2
 rofi.padding: 480
 rofi.bw: 0
 rofi.hide-scrollbar: true
-!rofi.fullscreen: true
+rofi.fullscreen: true
 rofi.glob: true
 rofi.regex: true
 rofi.fuzzy: true
 rofi.terminal: terminator
 rofi.ssh-command: {terminal} -x {ssh-client} {host}
 rofi.switchers: run,ssh,VirtualBox:/home/will/.config/rofi/scripts/vbox.sh,Workspace:/home/will/.config/rofi/scripts/workspace.sh,Cheatsheets:/home/will/.config/rofi/scripts/cheatsheets.sh
+rofi.show-icons: true

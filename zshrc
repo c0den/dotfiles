@@ -1,6 +1,10 @@
+POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k/powerlevel9k.zsh-theme
 export TERM="xterm-256color"
 export SSLKEYLOGFILE=/home/will/.sslkeylogs/sslkeylog.log
 source ~/.config/antigen/antigen.zsh
+
+# Load aliases
+source $HOME/.aliases
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -49,3 +53,8 @@ zstyle ':completion:*' rehash true
 #}
 
 #zle -N zle-line-init
+
+ZSH_COUNT=$(pgrep zsh | wc -l)
+if [[ $ZSH_COUNT -eq 2 ]]; then
+    archey3
+fi

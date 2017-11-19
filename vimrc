@@ -15,7 +15,7 @@ let $vimhome=fnamemodify(resolve(expand("~/.vimrc")), ':p:h')
 set nocompatible
 
 "=====================================================
-"" Vundle settings
+"" Vundle settings - Actually using vim-plug
 "=====================================================
 filetype off
 call plug#begin('~/.vim/plugged')
@@ -35,6 +35,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-surround'                 " Parentheses, brackets, quotes, XML tags, and more
     Plug 'flazz/vim-colorschemes'             " Colorschemes
     Plug 'Konfekt/FastFold'                   " Fast Folding
+    Plug 'wikitopian/hardmode'                " Hardmode - call HardMode(), call EasyMode()
 
     "-------------------=== Snippets support ===--------------------
     Plug 'garbas/vim-snipmate'                " Snippets manager
@@ -51,6 +52,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'klen/python-mode'                   " Python mode (docs, refactor, lints...)
     Plug 'davidhalter/jedi-vim'               " Jedi-vim autocomplete Plug
     Plug 'scrooloose/syntastic'               " Syntax checking plugin for Vim
+
+    "-------------------=== LaTeX  ===-----------------------------
+    Plug 'xuhdev/vim-latex-live-preview'      " Live preview for latex
 
 call plug#end()                                 " required
 filetype on
@@ -81,6 +85,8 @@ set showmatch                               " shows matching part of bracket pai
 
 set enc=utf-8	                            " utf-8 by default
 
+set shortmess+=A                            " don't give atttention to swap messages
+
 "set nobackup 	                            " no backup files
 "set nowritebackup                           " only in case you don't want a backup file while editing
 "set noswapfile 	                            " no swap files
@@ -106,8 +112,8 @@ nnoremap <space> za                         " enable folding with the spacebar
 "=====================================================
 "" Backup/Tmp settings
 "=====================================================
-set backupdir=~/.vimtmp,.
-set directory=~/.vimtmp,.
+set backupdir=~/.vimtmp,/tmp,.
+set directory=~/.vimtmp,/tmp,.
 if has("vms")
   set nobackup      " do not keep a backup file, use versions instead
 else
@@ -254,3 +260,8 @@ let g:syntastic_style_error_symbol='X'
 let g:syntastic_warning_symbol='x'
 let g:syntastic_style_warning_symbol='x'
 let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
+
+"=====================================================
+"" LaTeX Live Preview
+"=====================================================
+let g:livepreview_previewer = 'zathura'
