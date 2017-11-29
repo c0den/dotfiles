@@ -88,8 +88,8 @@ set enc=utf-8	                            " utf-8 by default
 set shortmess+=A                            " don't give atttention to swap messages
 
 "set nobackup 	                            " no backup files
-"set nowritebackup                           " only in case you don't want a backup file while editing
-"set noswapfile 	                            " no swap files
+"set nowritebackup                          " only in case you don't want a backup file while editing
+"set noswapfile 	                        " no swap files
 
 set backspace=indent,eol,start              " backspace removes all (indents, EOLs, start) What is start?
 
@@ -110,16 +110,15 @@ nnoremap <C-H> <C-W><C-H>                   " split navigation Ctrl-H - right
 nnoremap <space> za                         " enable folding with the spacebar
 
 "=====================================================
-"" Backup/Tmp settings
+"" Backup/Tmp/Undo settings
 "=====================================================
-set backupdir=~/.vimtmp,/tmp,.
-set directory=~/.vimtmp,/tmp,.
-if has("vms")
-  set nobackup      " do not keep a backup file, use versions instead
-else
-  set backup        " keep a backup file (restore to previous version)
-  set undofile      " keep an undo file (undo changes after closing)
-endif
+set backupdir=~/.vim/.backup//,/tmp/.backup//,.
+set directory=~/.vim/.swp//,/tmp/.swp//,.
+set undodir=~/.vim/.undo//,/tmp/.undo//,.
+
+set backup        " keep a backup file (restore to previous version)
+set undofile      " keep an undo file (undo changes after closing)
+set swapfile      " keep a swapfile (recover from errors)
 
 "=====================================================
 "" Tabs / Buffers settings

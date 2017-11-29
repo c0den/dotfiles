@@ -1,6 +1,9 @@
 antigen/repos/
 antigen/revert-info
 vim/plugged
+vim/.undo
+vim/.backup
+vim/.swp
 antigen/.antigen
 antigen/.resources
 antigen/.zcompdump
