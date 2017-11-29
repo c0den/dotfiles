@@ -1,4 +1,12 @@
 antigen/repos/
 antigen/revert-info
 vim/plugged
+antigen/.antigen
+antigen/.resources
+antigen/.zcompdump
+antigen/.zcompdump.zwc
+antigen/bundles/
+antigen/debug.log
+antigen/init.zsh
+antigen/init.zsh.zwc
 *~

@@ -10,7 +10,7 @@
     ~/.vim: vim
     ~/.zshrc: zshrc
     ~/.zsh: zsh
-    ~/.antigen: antigen
+    ~/.config/antigen: antigen
     ~/.gitconfig: gitconfig
     ~/.Xresources: Xresources
 

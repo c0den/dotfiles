@@ -1,7 +1,7 @@
 POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k/powerlevel9k.zsh-theme
 export TERM="xterm-256color"
 export SSLKEYLOGFILE=/home/will/.sslkeylogs/sslkeylog.log
-source ~/.config/antigen/antigen.zsh
+source ~/.antigen/antigen.zsh
 
 # Load aliases
 source $HOME/.aliases
