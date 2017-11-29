@@ -15,7 +15,7 @@ let $vimhome=fnamemodify(resolve(expand("~/.vimrc")), ':p:h')
 set nocompatible
 
 "=====================================================
-"" Vundle settings - Actually using vim-plug
+"" vim-plug settings
 "=====================================================
 filetype off
 call plug#begin('~/.vim/plugged')
