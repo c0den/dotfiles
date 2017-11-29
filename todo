@@ -1,0 +1,3 @@
+- vimrc should check for the existence of ~/.vim/{,backup,.swp,.undo}
+- Look in config..are there other dotfiles I want to include?
+- Look in ~..are there other dotfiles I want to include?
