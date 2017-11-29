@@ -1,0 +1,25 @@
+# Alias File
+
+# Rapid Fire Apps
+alias v='vim'               # v for vim
+alias q='qutebrowser'       # q for qutebrowser
+alias R='ranger'            # R for ranger
+
+
+# Quick access to config files
+
+alias cz='$EDITOR ~/.zshrc' # edit ~/.zshrc
+alias ci='$EDITOR ~/.config/i3/config'  # edit i3 config
+
+# Other Commands
+
+alias t='tail -f'
+alias h='history'
+
+
+# Go to directories
+
+alias gth='cd ~'
+alias gtd='cd ~/Downloads'
+alias gtD='cd ~/Documents'
+
