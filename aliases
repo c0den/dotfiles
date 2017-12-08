@@ -5,6 +5,13 @@ alias v='vim'               # v for vim
 alias q='qutebrowser'       # q for qutebrowser
 alias R='ranger'            # R for ranger
 
+# Apps
+alias music='ncmpcpp'	    # music for ncmpcpp
+alias files='ranger'
+alias chat='yakyak'
+alias calendar='calcurse'
+
+
 
 # Quick access to config files
 
@@ -15,6 +22,15 @@ alias ci='$EDITOR ~/.config/i3/config'  # edit i3 config
 
 alias t='tail -f'
 alias h='history'
+alias ka='killall'
+alias ls='ls -hN --color=auto --group-directories-first'
+alias mkdir='mkdir -pv'
+alias crep='grep --color=always'
+alias p='sudo pacman'
+alias sdn='sudo shutdown now'
+alias yt='youtube-dl -ic'
+alias yta='youtube-dl -xic'
+alias starwars='telnet towel.blinkenlights.nl'
 
 
 # Go to directories
@@ -22,4 +38,9 @@ alias h='history'
 alias gth='cd ~'
 alias gtd='cd ~/Downloads'
 alias gtD='cd ~/Documents'
+alias gtdev='cd ~/Development'
+alias gtP='cd ~/Pictures'
 
+
+# Weather
+weath() { curl wttr.in/$1 ;}
