@@ -31,6 +31,7 @@ antigen bundle stanislas/allergen
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen bundle Tarrasch/zsh-autoenv
 antigen bundle joepvd/zsh-hints
+antigen bundle virtualenv
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting

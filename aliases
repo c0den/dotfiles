@@ -6,11 +6,11 @@ alias q='qutebrowser'       # q for qutebrowser
 alias R='ranger'            # R for ranger
 
 # Apps
-alias music='ncmpcpp'	    # music for ncmpcpp
+alias music='systemctl --user start mopidy && ncmpcpp'	    # music for ncmpcpp
 alias files='ranger'
 alias chat='yakyak'
 alias calendar='calcurse'
-
+alias ytc='mpsyt'
 
 
 # Quick access to config files

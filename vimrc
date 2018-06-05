@@ -55,6 +55,10 @@ call plug#begin('~/.vim/plugged')
 
     "-------------------=== LaTeX  ===-----------------------------
     Plug 'xuhdev/vim-latex-live-preview'      " Live preview for latex
+    
+    "-------------------=== Note Taking  ===-----------------------------
+    Plug 'xolox/vim-notes'      " Vim Notes for notetaking
+    Plug 'xolox/vim-misc'      " Required by Vim-Notes
 
 call plug#end()                                 " required
 filetype on
